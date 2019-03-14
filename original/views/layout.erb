@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <nav class="center-hrizontal">
+  <% if !current_user.nil? %>
+	  <a href="/">TOP</a>
+		<a href="/new">投稿</a>
+		<a href="/home">自分の動画</a>
+		<a href="/search">動画検索</a>
+		<a href="/sign_out">ログアウト</a>
+		<a href="/upload">アップロード</a>
+  <% else %>
+    <a href="/">TOP</a>
+		<a href="/sign_in">ログイン</a>
+    <a href="/sign_up">アカウント作成</a>
+  <% end %>
+	</nav>
+  <%= yield %>
+</body>
+</html>
